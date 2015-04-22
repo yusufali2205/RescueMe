@@ -23,8 +23,9 @@
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
+    /* -webkit-user-select: none; 				   prevent copy paste, to allow, change 'none' to 'text' */
+    -webkit-user-select: auto !important;		/* to allow user input */
+	background-color:#E4E4E4;
     background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
@@ -50,11 +51,11 @@ body {
     background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
     position:absolute;             /* position in the center of the screen */
     left:50%;
-    top:50%;
+    top:20%;
     height:50px;                   /* text area height */
     width:225px;                   /* text area width */
     text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    padding:20px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
     margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
                                    /* offset horizontal: half of text area width */
 }
@@ -112,4 +113,34 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+
+.button {
+    margin: 10px 10px 0 0;
+    padding: 7px 0;
+}
+
+#deviceready {
+    margin-bottom: 20px;
+}
+
+#map_canvas {
+	width: 100%;
+	height: 300px;
+}
+
+#fbLogin {
+	width: 100px;
+	height: 15px;
+	float: left;
+}
+
+#settings {
+	width: 70px;
+	height: 15px;
+	float: right;
+}
+
+table, th, td {
+    border: 0px;
 }

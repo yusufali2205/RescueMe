@@ -2,11 +2,12 @@
 <widget id="com.app.rescue" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>RescueMe</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        App to raise rescue requests.
     </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+        Yusuf Ali
     </author>
+	
     <content src="index.html" />
     <access origin="*" />
 </widget>
