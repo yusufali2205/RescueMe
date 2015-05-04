@@ -7,8 +7,8 @@
         <meta name="msapplication-tap-highlight" content="no" />
 
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <!-- Uncomment to debug using weinre
-		<script src="http://192.168.0.14:8080/target/target-script-min.js#anonymous"></script>
+		<!--
+		<script src="http://192.168.0.24:8080/target/target-script-min.js#anonymous"></script>
 		-->
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
 		
@@ -24,23 +24,49 @@
         <script type="text/javascript" src="js/location.js"></script>
 		<script type="text/javascript" src="js/menu.js"></script>
 		<script type="text/javascript" src="js/settings.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.3.js"></script>
+		<script type="text/javascript" src="js/buttonHighlight.js"></script>
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqn6ZUhkuUPvI4no-CAibTBtzxKnzR0U8"></script>
 		
 		
 		<div class="app">
 			<h1>RescueMe</h1>
-			<div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
 			
-			<div id="fbLogin" class="event listening button" onclick="login();">Connect with Facebook</div>
+			<div id="fbLogin" class="event listening button" onclick="login();">Facebook connect</div>
 			<div id="settings" class="event listening button" onclick="settings();">Settings</div>
-			<br><br><br><br>
-			<h3 id="message-box"></h3>
-			<div id="raiseRequest" class="event listening button" onclick="showMenu();">Raise Rescue Request</div>
+			
+			<br><br><br><br><br>
+			<div style="font-size:12px;"><b>Press to raise an emergency request</b></div>
+			<img id="raiseRequest" src="img/emergency.png" class="blink" onclick="confirmLocation();" />
+			
+			<br><br>
+			<div style="text-align:left;">Select emergency type</div>
+			<table>
+				<tr>
+					<td><div id="e1" class="selectEmergencyButton" onclick="raiseCrimeEmergency();">Crime</div></td>
+					<td><div id="e2" class="selectEmergencyButton" onclick="raiseDisasterEmergency();">Disaster</div></td>
+					<td><div id="e3" class="selectEmergencyButton" onclick="raiseAccidentEmergency();">Accident</div></td>
+					<td><div id="e4" class="selectEmergencyButton" onclick="raiseMedicalEmergency();">Medical</div></td>
+					<td><div id="e5" class="selectEmergencyButton" onclick="raiseOtherEmergency();">Other</div></td>
+				</tr>
+			</table>
+			<br>
+			<div style="text-align:left;">Select number of people</div>
+			<table>
+				<tr>
+					<td><div id="n1" class="selectCountButton" onclick="setCount(1);">1</div></td>
+					<td><div id="n2" class="selectCountButton" onclick="setCount(2);">2</div></td>
+					<td><div id="n3" class="selectCountButton" onclick="setCount(3);">3</div></td>
+					<td><div id="n4" class="selectCountButton" onclick="setCount(4);">4</div></td>
+					<td><div id="n5" class="selectCountButton" onclick="setCount(5);">5</div></td>
+				</tr>
+			</table>
+			<br><br>
+			<div id="latitude"></div>
+			<div id="longitude"></div>
+			<div id="address"></div>
+			
         </div>
         
-		<div id="fb-root"></div>
     </body>
 </html>

@@ -42,21 +42,22 @@ body {
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
+    /* text-transform:uppercase; */
     width:100%;
 }
 
 /* Portrait layout (default) */
 .app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
     position:absolute;             /* position in the center of the screen */
-    left:50%;
+    margin-left: auto;
+	margin-right: auto;
+	left:50%;
     top:20%;
     height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
+    width:250px;                   /* text area width */
     text-align:center;
     padding:20px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+    margin:-115px 0px 0px -125px;  /* offset vertical: half of image height and text area height */
                                    /* offset horizontal: half of text area width */
 }
 
@@ -91,11 +92,46 @@ h1 {
 .event.listening {
     background-color:#333333;
     display:block;
+	width: 100px;
+    text-align:center;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .event.received {
     background-color:#4B946A;
     display:none;
+	width: 100px;
+    text-align:center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.selectCountButton {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    font-size:12px;
+	color: #FFFFFF;
+    padding:2px 0px;
+	background-color:#B45555;
+    display:block;
+	width: 50px;
+	margin: 0 5px 0 0;
+    padding: 7px 0;
+}
+
+.selectEmergencyButton {
+	border-radius:4px;
+    -webkit-border-radius:4px;
+    font-size:12px;
+	color: #FFFFFF;
+    padding:2px 0px;
+	background-color:#B45555;
+    display:block;
+	width: 50px;
+    text-align:center;
+	margin: 0px 5px 0 0;
+    padding: 7px 0;
 }
 
 @keyframes fade {
@@ -126,7 +162,7 @@ h1 {
 
 #map_canvas {
 	width: 100%;
-	height: 300px;
+	height: 200px;
 }
 
 #fbLogin {
@@ -141,6 +177,32 @@ h1 {
 	float: right;
 }
 
+.picker {
+	border-radius:4px;
+    -webkit-border-radius:4px;
+    font-size:12px;
+    padding:2px 0px;
+	background-color:#333333;
+    display:block;
+	width: 150px;
+	margin: 0 5px 0 0;
+    padding: 7px 0;
+	color:#FFFFFF;
+	text-align: center;
+	
+}
+
+
 table, th, td {
     border: 0px;
+/*
+	margin-bottom: 30px;
+	margin-top: 30px;
+	padding: 10px;
+*/	
+}
+
+#settingsForm {
+	width: 200px;
+	text-align:left;
 }

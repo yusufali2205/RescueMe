@@ -97,6 +97,14 @@ module.exports = [
         "merges": [
             ""
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.vibration/www/vibration.js",
+        "id": "org.apache.cordova.vibration.notification",
+        "merges": [
+            "navigator.notification",
+            "navigator"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -108,7 +116,8 @@ module.exports.metadata =
     "com.phonegap.plugins.facebookconnect": "0.11.0",
     "org.apache.cordova.geolocation": "0.3.12",
     "com.cordova.plugins.sms": "0.1.2",
-    "org.apache.cordova.contacts": "0.2.16"
+    "org.apache.cordova.contacts": "0.2.16",
+    "org.apache.cordova.vibration": "0.3.13"
 }
 // BOTTOM OF METADATA
 });

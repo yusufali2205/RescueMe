@@ -67,6 +67,7 @@ E:\MyApps\rescue\platforms\android\ant-build\classes\org\apache\cordova\facebook
 E:\MyApps\rescue\platforms\android\ant-build\classes\org\apache\cordova\facebook\ConnectPlugin$8.class \
 E:\MyApps\rescue\platforms\android\ant-build\classes\org\apache\cordova\facebook\ConnectPlugin$9.class \
 E:\MyApps\rescue\platforms\android\ant-build\classes\org\apache\cordova\facebook\ConnectPlugin.class \
+E:\MyApps\rescue\platforms\android\ant-build\classes\org\apache\cordova\vibration\Vibration.class \
 E:\MyApps\rescue\platforms\android\ant-build\dexedLibs\classes-e530ffab2a6df6cc140e14630587cbc6.jar \
 E:\MyApps\rescue\platforms\android\ant-build\dexedLibs\classes-8754dc491ab6afbc886ec34df792f57a.jar \
 E:\MyApps\rescue\platforms\android\ant-build\dexedLibs\bolts-android-1.1.2-c5a70017f114d25b674f866773e0433b.jar \

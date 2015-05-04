@@ -1,9 +1,9 @@
 
 var getLocation = function() {
-    navigator.geolocation.getCurrentPosition(onLocationSuccess, onLocationError);
+    //navigator.geolocation.getCurrentPosition(onLocationSuccess, onLocationError);
     //can use watchPosition to get position when change in position is detected.
     //we'll have to use it with a timeout option.
-    //navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000 } );
+    //navigator.geolocation.watchPosition(onLocationSuccess, onError, { timeout: 30000 } );
 }
 
 function onLocationSuccess(position) {
@@ -11,6 +11,24 @@ function onLocationSuccess(position) {
 	currLong = position.coords.longitude;
 	var positionTimestamp = position.timestamp;
 	
+	// getting address
+	var geocoder = new google.maps.Geocoder();
+	var latlng = new google.maps.LatLng(currLat, currLong);
+	geocoder.geocode({'latLng': latlng}, function(results, status) {
+		if (status == google.maps.GeocoderStatus.OK) {
+			if (results[0]) {
+				address = results[0].formatted_address;
+			} else { alert("No address found");}
+		} else { alert("Request failed, cannot get address"); }
+	});
+	
+	// display latitude, longitude and address on the screen
+	document.getElementById("latitude").innerHTML = "Latitude: " + currLat;
+	document.getElementById("longitude").innerHTML = "Longitude: " + currLong;
+	document.getElementById("address").innerHTML = "Address: " + address;
+	
+	
+	/*
 	//set map options
 	var mapOptions = {
         center: new google.maps.LatLng(currLat, currLong),
@@ -27,6 +45,7 @@ function onLocationSuccess(position) {
 										map: map,
 										title:"Your location!"
 										});
+	*/
 }
 
 function onLocationError(error) {

@@ -1,19 +1,19 @@
 var settings = function () {
 	var appDiv = document.getElementsByClassName("app");
 	back_page_from_settings = appDiv[0].innerHTML;
-	appDiv[0].innerHTML = '<h3 id="message-box">Settings</h3>'
-			+ '<table>'
-			+ 	'<tr>'
-			+ 		'<td>Name</td> <td id="username" onclick="changeName();">N</td>'
-			+ 	'</tr>'
-			+ 	'<tr>'
-			+ 		'<td>Emergency Contact</td> <td id="emergencyContact" onclick="addEmergencyContact();">E</td>'
-			+ 	'</tr>'
-			+ 	
-			+	'<tr>'
-			+ 		'<td class="event listening button" onclick="goBackFromSettings();">Go Back</td>'
-			+	'</tr>'
-			+ '</table>';
+	appDiv[0].innerHTML = '<h1>RescueMe</h1>'
+			+ '<div id="settings" class="event listening button" onclick="goBackFromSettings();">Back</div>'
+			+ '<br><br><br><br>'
+			+ '<h2 id="message-box">Settings</h2>'
+			+ 	'<div id="settingsForm">'	
+			+		'<div><b>Your Name: </b></div>'
+			+		'<div style="font-size: 10px;">(Tap below to change your name)</div>'
+			+		'<div id="username" class="picker" onclick="changeName();">Anonymous</div>'
+			+		'<br><br><br>'
+			+ 		'<div><b>Emergency Contact: </b></div>'
+			+		'<div style="font-size: 10px;">(Tap below to change emergency contact)</div>'
+			+		'<div id="emergencyContact" class="picker" onclick="addEmergencyContact();">Select</div>'
+			+	'</div>';
 	
 	// get name from phones database and display in id="username" tag (display "Anonymous" if name not stored)
 	var name = window.localStorage.getItem("name");
@@ -44,7 +44,8 @@ var goBackFromSettings = function () {
 // change text in id="username" to an input
 // save name to the phones database
 var changeName = function () {
-	var namePrompt = prompt("Please enter your name", "");
+	var currentName = window.localStorage.getItem("name");
+	var namePrompt = prompt("Please enter your name", currentName);
 
 	if (namePrompt != null) {
 		document.getElementById("username").innerHTML =	namePrompt;

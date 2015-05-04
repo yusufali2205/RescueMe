@@ -7,17 +7,12 @@ var login = function () {
                     function (response) { //alert(JSON.stringify(response));
 											getFbProfile();
 											
-											var recordLogin = new RecordLogin();
-											recordLogin.save({fbUserID: response.authResponse.userID});
+										var recordLogin = new RecordLogin();
+										recordLogin.save({fbUserID: response.authResponse.userID});
 											
-                                          document.getElementById("message-box").innerHTML = "Welcome";
-                                          var appDiv = document.getElementsByClassName("app");
-										  loginPage = appDiv[0].innerHTML; //storing login page div elements
-										  appDiv[0].removeChild(document.getElementById("fbLogin")); 
-										  emptyAppDiv = appDiv[0].innerHTML; //storing empty app div
-                                          appDiv[0].innerHTML = appDiv[0].innerHTML
-												+ '<div class="event listening button" onclick="call911();">Call 911</div>'
-												+ '<div id="fbLogout" class="event listening button" onclick="logout();">Logout with Facebook</div>';
+                                        var appDiv = document.getElementsByClassName("app");
+										loginPage = appDiv[0].innerHTML; //storing login page div elements
+										  
                                         },
                     function (response) { alert(JSON.stringify(response)) });
 }
@@ -30,7 +25,8 @@ var getDOB = function () {
 
 var getFbProfile = function () {
                 facebookConnectPlugin.api( "me/?fields=id,name,email,birthday,picture", ["user_birthday"],
-                    function (response) { 	alert("Name: " + response.name );
+                    function (response) { 	alert("Welcome: " + response.name );
+											window.localStorage.setItem("name", response.name);
 											//alert("DOB: " + response.birthday );
 											//alert("Picture: " + response.picture.data.url );
 										},
@@ -53,9 +49,10 @@ var logout = function () {
                 var confirmLogout = confirm("Are you sure you want to logout?");
 				if(confirmLogout==true) {
 					facebookConnectPlugin.logout(
-						function (response) { document.getElementById("message-box").innerHTML = "Thank you";
+						function (response) { 
 											var oldAppDiv = document.getElementsByClassName("app");
 											oldAppDiv[0].innerHTML = loginPage;
+											window.localStorage.setItem("name", "Anonymous");
 											},
 						function (response) { alert(JSON.stringify(response)) });
 				}
